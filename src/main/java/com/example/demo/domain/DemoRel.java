@@ -15,13 +15,23 @@ public class DemoRel {
     @Column(name = "name")
     private String name;
 
-    public DemoRel() {
+    @ManyToOne
+    private Demo demo;
+
+    public Demo getDemo() {
+        return demo;
     }
 
-    //    public DemoRel(Long id, String name) {
-//        this.id = id;
-//        this.name = name;
-//    }
+    public void setDemo(Demo demo) {
+        this.demo = demo;
+    }
+
+    public DemoRel(String name, Demo demo) {
+        this.name = name;
+        this.demo = demo;
+    }
+
+    public DemoRel(){}
 
     public Long getId() {
         return id;
@@ -37,5 +47,13 @@ public class DemoRel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "DemoRel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
