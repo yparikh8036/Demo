@@ -1,0 +1,40 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
+    id 'java'
+ //   id 'net.ltgt.apt' version '0.8'
+}
+bootJar {
+    baseName = 'gs-rest-service-cors'
+    version =  '0.1.0'
+}
+
+
+apply plugin: 'io.spring.dependency-management'
+
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+//task wrapper(type: Wrapper) {
+//	gradleVersion = '3.4'
+//}
+
+repositories {
+    mavenCentral()
+//	mavenLocal()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.4.RELEASE'
+    compile 'mysql:mysql-connector-java'
+    compile ("io.springfox:springfox-swagger2:2.9.2") {
+        exclude module: 'mapstruct'
+    }
+    compile "org.mapstruct:mapstruct-jdk8:1.2.0.Final"
+    annotationProcessor "org.mapstruct:mapstruct-processor:1.2.0.Final"
+
+}
+
