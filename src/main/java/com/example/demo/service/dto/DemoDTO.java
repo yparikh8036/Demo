@@ -5,6 +5,7 @@ public class DemoDTO {
     private Long id;
     private String name;
     private Long demorelId;
+    private String demorelName;
 
     public Long getDemorelId() {
         return demorelId;
@@ -30,5 +31,11 @@ public class DemoDTO {
         this.name = name;
     }
 
+    public String getDemorelName() {
+        return demorelName;
+    }
 
+    public void setDemorelName(String demorelName) {
+        this.demorelName = demorelName;
+    }
 }
