@@ -23,9 +23,7 @@ public class DemoController {
     }
 
     @PostMapping("create")
-    public DemoDTO createDemo(@RequestBody DemoDTO demoDTO) {
-        return demoService.save(demoDTO);
-    }
+    public DemoDTO createDemo(@RequestBody DemoDTO demoDTO) { return demoService.save(demoDTO); }
 
     @GetMapping("demo")
     public List<Demo> getAllDemo() {
